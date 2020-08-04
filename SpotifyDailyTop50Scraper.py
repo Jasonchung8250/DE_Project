@@ -62,6 +62,7 @@ for i in range(playlist_json['total']):
                    playlist_json['items'][i]['track']['duration_ms'],
                    playlist_json['items'][i]['track']['explicit'],
                    playlist_json['items'][i]['track']['popularity'],
+                   i + 1,
                    playlist_json['items'][i]['track']['album']['id'],
                    playlist_json['items'][i]['track']['album']['name'],
                    playlist_json['items'][i]['track']['album']['album_type'],
@@ -72,8 +73,8 @@ for i in range(playlist_json['total']):
     playlist_data.append(track_tuple)
 
 #Insert data into MySQL 
-insert_query = """INSERT INTO spotify_daily_top_50_global (artist_name, track_id, track_name, duration_ms, explicit, popularity, album_id, album_name, album_type, release_date, dt)    
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+insert_query = """INSERT INTO spotify_daily_top_50_global (artist_name, track_id, track_name, duration_ms, explicit, popularity, daily_rank, album_id, album_name, album_type, release_date, dt)    
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                 """
 insert_data = playlist_data
 
