@@ -11,7 +11,7 @@ from SpotifyAPI import SpotifyAPI
 
 #Connect to MySQL DB
 
-connection = mysql.connector.connect(host = "localhost", database = configs.database, user = configs.database_user, password = configs.password)
+connection = mysql.connector.connect(host = "localhost", database = configs.database, user = configs.user, password = configs.password)                                                                                          
 
 client_id = configs.client_id
 client_secret = configs.client_secret
